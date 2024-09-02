@@ -1,0 +1,244 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Benne&family=IM+Fell+French+Canon+SC&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url(./reset.css);
+
+body {
+  font-family: "Merriweather", serif;
+  /* overflow: hidden; */
+  font-family: "Roboto", sans-serif;
+  background-color: #221508;
+  font-family: "Baskervville SC", serif;
+}
+/* 배경1 */
+.con {
+  z-index: 1;
+  width: 100%;
+  position: relative;
+  /* overflow: hidden; */
+  background-color: #221508;
+}
+/* 전체 컨텐츠 영역 */
+.con-inner {
+  z-index: 3;
+  width: 98%;
+  margin-left: 1%;
+  padding-top: 1%;
+  position: relative;
+  overflow: hidden;
+  background-color: aquamarine;
+}
+/* 로고 */
+.logo-holder {
+  z-index: 900;
+  letter-spacing: -0.02rem;
+  text-decoration: none;
+  position: fixed;
+  top: 5vw;
+  left: 4.5vw;
+  font-weight: bolder;
+}
+.menu-text.logo.name {
+  font-family: "Merriweather", serif;
+  width: fit-content;
+  gap: 20px;
+  z-index: 900;
+  position: fixed;
+  display: flex;
+  top: 5vw;
+  left: 4.5vw;
+  justify-content: space-between;
+  letter-spacing: -2px;
+  font-weight: 600;
+}
+.menu-text {
+  color: #221508;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 130%;
+  position: relative;
+}
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block;
+}
+a {
+  background-color: #0000;
+}
+/* 메뉴 홀더 */
+.menu_holder {
+  font-family: "Roboto", sans-serif;
+
+  width: fit-content;
+  gap: 50px;
+  z-index: 900;
+  position: fixed;
+  font-weight: bolder;
+  display: flex;
+  /* opacity: 0; */
+  top: 5vw;
+  right: 4.5vw;
+  justify-content: space-between;
+  letter-spacing: -2px;
+  font-weight: bold;
+}
+/* 첫 번째 영역 */
+.heard {
+  z-index: 2;
+  background-color: #fffbf7;
+  width: 98%;
+  height: 100vh;
+  position: relative;
+  margin: 0 auto;
+}
+.header-h1 {
+  color: #221508;
+  text-align: center;
+  letter-spacing: -0.51vw;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 100%;
+  display: inline-block;
+  position: relative;
+}
+/* 애니메이션 */
+.loop-text-holder {
+  z-index: 5;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  transform: rotate(-5deg);
+  will-change: transform;
+
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px;
+}
+/* 1 */
+.loop-auto-size:first-child {
+  display: flex;
+  z-index: 11;
+  font-size: 24vw;
+}
+.loop-auto-size > div {
+  animation: textRight1 20s linear 0s infinite;
+  will-change: transform;
+}
+@keyframes textRight1 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 2 */
+.loop-text-holder2 {
+  z-index: -1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  transform: rotate(5deg);
+  will-change: transform;
+  color: #221508;
+}
+.loop-auto-size2:first-child {
+  display: flex;
+  z-index: 11;
+  font-size: 24vw;
+}
+.loop-auto-size2 > div {
+  animation: textleft1 20s linear 0s infinite normal;
+  will-change: transform;
+}
+@keyframes textleft1 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.loop-auto-size2:last-child {
+  display: flex;
+  z-index: 11;
+  will-change: transform;
+  font-size: 24vw;
+}
+/* 중간 이미지 */
+.main_poto {
+  justify-content: center;
+  align-items: center;
+  height: 108%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+/* 첫번째 하단부 글자 영역 */
+.menu-text.sub {
+  color: #646464;
+  text-transform: uppercase;
+  font-size: 0.853242vw;
+  line-height: 130%;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+}
+.div-block-12 {
+  z-index: 100;
+  position: absolute;
+  bottom: 5vw;
+  left: 4vw;
+  font-family: "Roboto", sans-serif;
+}
+.div-block-12.right {
+  left: auto;
+  right: 4.25vw;
+  font-family: "Roboto", sans-serif;
+}
+/* 섹션2 */
+/* .content-graid {
+  z-index: 1;
+  background-color: #ff7f00;
+  width: 100%;
+  margin-top: -2px;
+  padding-bottom: 0;
+  position: relative;
+}
+.work-wrap-list-holder {
+  width: 100%;
+  margin-bottom: 4vw;
+  padding-top: 5vw;
+  position: relative;
+  background-color: #e8eceb;
+}
+.collection-list {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 12vw;
+  display: flex;
+  position: relative;
+  background-color: black;
+}
+.collection-item {
+  z-index: 1;
+  border-bottom: 1px #353535;
+  width: 100%;
+  margin-top: 17vw;
+  margin-bottom: 7vw;
+  display: inline-block;
+  position: relative;
+} */
