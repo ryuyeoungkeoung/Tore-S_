@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>클론코딩 1</title>
+    <!-- 파비콘 -->
+    <link rel="icon" href="./img/icon.png" type="image/x-icon" sizes="16x16" />
+    <!-- css -->
     <link rel="stylesheet" href="./css/index.css" />
+    <!-- 미디어쿼리 -->
+    <link rel="stylesheet" href="./css/responsive.css" />
     <!-- //cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
@@ -32,104 +37,110 @@
         </div>
       </div>
     </div> -->
-    <!-- 메뉴 오른 -->
+
     <!-- 메뉴 왼 -->
-    <a href="./index.html" class="w-inline-block active">
-      <div class="menu-text logo name">Tore S. Bentsen</div>
-    </a>
-    <div class="menu_holder">
-      <div class="word_wrap" id="menu_work">
-        <!--메뉴 슬롯1-->
-        <ul class="menu align-center expanded text-center SMN_effect-31">
-          <li>
-            <a href="#" class="top_link">
-              <div>
-                <span data-hover="Recognitions" class="menu_text">W</span>
-                <span data-hover="Recognitions" class="menu_text">o</span>
-                <span data-hover="Recognitions" class="menu_text">r</span>
-                <span data-hover="Recognitions" class="menu_text">k</span>
-                <span data-hover="Recognitions" class="menu_text"
-                  ><sup>9</sup></span
-                >
-              </div>
-              <div>
-                <span data-hover="Recognitions" class="menu_text">W</span>
-                <span data-hover="Recognitions" class="menu_text">o</span>
-                <span data-hover="Recognitions" class="menu_text">r</span>
-                <span data-hover="Recognitions" class="menu_text">k</span>
-                <span data-hover="Recognitions" class="menu_text"
-                  ><sup>9</sup></span
-                >
-              </div></a
-            >
-          </li>
-        </ul>
+    <header class="menu_wrap">
+      <h1>
+        <a href="./index.html" class="w-inline-block active">
+          <div class="menu-text logo name">Tore S. Bentsen</div>
+        </a>
+      </h1>
+      <!-- 메뉴 오른 -->
+      <div class="menu_holder">
+        <div class="word_wrap" id="menu_work">
+          <!--메뉴 슬롯1-->
+          <ul class="menu align-center expanded text-center SMN_effect-31">
+            <li>
+              <a href="#" class="top_link">
+                <div>
+                  <span data-hover="Recognitions" class="menu_text">W</span>
+                  <span data-hover="Recognitions" class="menu_text">o</span>
+                  <span data-hover="Recognitions" class="menu_text">r</span>
+                  <span data-hover="Recognitions" class="menu_text">k</span>
+                  <span data-hover="Recognitions" class="menu_text"
+                    ><sup>9</sup></span
+                  >
+                </div>
+                <div>
+                  <span data-hover="Recognitions" class="menu_text">W</span>
+                  <span data-hover="Recognitions" class="menu_text">o</span>
+                  <span data-hover="Recognitions" class="menu_text">r</span>
+                  <span data-hover="Recognitions" class="menu_text">k</span>
+                  <span data-hover="Recognitions" class="menu_text"
+                    ><sup>9</sup></span
+                  >
+                </div></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="word_wrap" id="menu_recog">
+          <!--메뉴 슬롯2-->
+          <ul class="menu align-center expanded text-center SMN_effect-31">
+            <li>
+              <a href="#" class="top_link">
+                <div>
+                  <span data-hover="Recognitions" class="menu_text">R</span>
+                  <span data-hover="Recognitions" class="menu_text">e</span>
+                  <span data-hover="Recognitions" class="menu_text">c</span>
+                  <span data-hover="Recognitions" class="menu_text">o</span>
+                  <span data-hover="Recognitions" class="menu_text">g</span>
+                  <span data-hover="Recognitions" class="menu_text">n</span>
+                  <span data-hover="Recognitions" class="menu_text">i</span>
+                  <span data-hover="Recognitions" class="menu_text">t</span>
+                  <span data-hover="Recognitions" class="menu_text">i</span>
+                  <span data-hover="Recognitions" class="menu_text">o</span>
+                  <span data-hover="Recognitions" class="menu_text">n</span>
+                  <span data-hover="Recognitions" class="menu_text">s</span>
+                </div>
+                <div>
+                  <span data-hover="Recognitions" class="menu_text">R</span>
+                  <span data-hover="Recognitions" class="menu_text">e</span>
+                  <span data-hover="Recognitions" class="menu_text">c</span>
+                  <span data-hover="Recognitions" class="menu_text">o</span>
+                  <span data-hover="Recognitions" class="menu_text">g</span>
+                  <span data-hover="Recognitions" class="menu_text">n</span>
+                  <span data-hover="Recognitions" class="menu_text">i</span>
+                  <span data-hover="Recognitions" class="menu_text">t</span>
+                  <span data-hover="Recognitions" class="menu_text">i</span>
+                  <span data-hover="Recognitions" class="menu_text">o</span>
+                  <span data-hover="Recognitions" class="menu_text">n</span>
+                  <span data-hover="Recognitions" class="menu_text">s</span>
+                </div></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!--메뉴 슬롯3-->
+        <div class="word_wrap" id="menu_contact">
+          <ul class="menu align-center expanded text-center SMN_effect-31">
+            <li>
+              <a href="#">
+                <div>
+                  <span data-hover="Recognitions" class="menu_text">C</span>
+                  <span data-hover="Recognitions" class="menu_text">o</span>
+                  <span data-hover="Recognitions" class="menu_text">n</span>
+                  <span data-hover="Recognitions" class="menu_text">t</span>
+                  <span data-hover="Recognitions" class="menu_text">a</span>
+                  <span data-hover="Recognitions" class="menu_text">c</span>
+                  <span data-hover="Recognitions" class="menu_text">t</span>
+                </div>
+                <div>
+                  <span data-hover="Recognitions" class="menu_text">C</span>
+                  <span data-hover="Recognitions" class="menu_text">o</span>
+                  <span data-hover="Recognitions" class="menu_text">n</span>
+                  <span data-hover="Recognitions" class="menu_text">t</span>
+                  <span data-hover="Recognitions" class="menu_text">a</span>
+                  <span data-hover="Recognitions" class="menu_text">c</span>
+                  <span data-hover="Recognitions" class="menu_text">t</span>
+                </div></a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="word_wrap" id="menu_recog">
-        <!--메뉴 슬롯2-->
-        <ul class="menu align-center expanded text-center SMN_effect-31">
-          <li>
-            <a href="#" class="top_link">
-              <div>
-                <span data-hover="Recognitions" class="menu_text">R</span>
-                <span data-hover="Recognitions" class="menu_text">e</span>
-                <span data-hover="Recognitions" class="menu_text">c</span>
-                <span data-hover="Recognitions" class="menu_text">o</span>
-                <span data-hover="Recognitions" class="menu_text">g</span>
-                <span data-hover="Recognitions" class="menu_text">n</span>
-                <span data-hover="Recognitions" class="menu_text">i</span>
-                <span data-hover="Recognitions" class="menu_text">t</span>
-                <span data-hover="Recognitions" class="menu_text">i</span>
-                <span data-hover="Recognitions" class="menu_text">o</span>
-                <span data-hover="Recognitions" class="menu_text">n</span>
-                <span data-hover="Recognitions" class="menu_text">s</span>
-              </div>
-              <div>
-                <span data-hover="Recognitions" class="menu_text">R</span>
-                <span data-hover="Recognitions" class="menu_text">e</span>
-                <span data-hover="Recognitions" class="menu_text">c</span>
-                <span data-hover="Recognitions" class="menu_text">o</span>
-                <span data-hover="Recognitions" class="menu_text">g</span>
-                <span data-hover="Recognitions" class="menu_text">n</span>
-                <span data-hover="Recognitions" class="menu_text">i</span>
-                <span data-hover="Recognitions" class="menu_text">t</span>
-                <span data-hover="Recognitions" class="menu_text">i</span>
-                <span data-hover="Recognitions" class="menu_text">o</span>
-                <span data-hover="Recognitions" class="menu_text">n</span>
-                <span data-hover="Recognitions" class="menu_text">s</span>
-              </div></a
-            >
-          </li>
-        </ul>
-      </div>
-      <!--메뉴 슬롯3-->
-      <div class="word_wrap" id="menu_contact">
-        <ul class="menu align-center expanded text-center SMN_effect-31">
-          <li>
-            <a href="#">
-              <div>
-                <span data-hover="Recognitions" class="menu_text">C</span>
-                <span data-hover="Recognitions" class="menu_text">o</span>
-                <span data-hover="Recognitions" class="menu_text">n</span>
-                <span data-hover="Recognitions" class="menu_text">t</span>
-                <span data-hover="Recognitions" class="menu_text">a</span>
-                <span data-hover="Recognitions" class="menu_text">c</span>
-                <span data-hover="Recognitions" class="menu_text">t</span>
-              </div>
-              <div>
-                <span data-hover="Recognitions" class="menu_text">C</span>
-                <span data-hover="Recognitions" class="menu_text">o</span>
-                <span data-hover="Recognitions" class="menu_text">n</span>
-                <span data-hover="Recognitions" class="menu_text">t</span>
-                <span data-hover="Recognitions" class="menu_text">a</span>
-                <span data-hover="Recognitions" class="menu_text">c</span>
-                <span data-hover="Recognitions" class="menu_text">t</span>
-              </div></a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
+    </header>
     <!-- 배경1 -->
     <!-- 전체 묶어줌 -->
     <div class="con">

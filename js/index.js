@@ -10,10 +10,8 @@ const word_wrap = document.querySelectorAll(".word_wrap");
 // 3
 const footer_sol = document.querySelectorAll(".footer_sol");
 // //on_1부터 on_31까지
-
 // 커서 요소
 const cursor_box = document.querySelector(".cursor");
-
 // 박스 요소와 이벤트 리스너 설정 함수
 for (let i = 1; i <= 31; i++) {
   const box = document.querySelector(`.box_${i}`);
@@ -29,12 +27,6 @@ for (let i = 1; i <= 31; i++) {
     box.addEventListener("mouseout", () => setCursorClass(false));
   }
 }
-
-//
-//
-//
-//
-//
 
 //마우스 커서 따라다니기
 window.addEventListener("mousemove", function (event) {
@@ -85,16 +77,7 @@ footer_sol.forEach((section, i) => {
   section.addEventListener("mouseenter", onViewSiteCusor2);
   section.addEventListener("mouseleave", outViewSiteCusor2);
 });
-//
-//
-//
-//
 
-// 로딩창
-//
-//
-//
-//
 // // 커서 클릭시 해당 섹션 이동
 gsap.registerPlugin(ScrollToPlugin);
 const menu_work = document.querySelector("#menu_work");
@@ -200,34 +183,7 @@ gsap.fromTo(
   },
   2
 );
-
-// 섹션2 영상 1 묶음
-
-gsap.fromTo(
-  ".poto1",
-  {
-    //시작할때 모습
-    rotate: -30,
-    x: "100%",
-    y: "30%",
-    scale: "1",
-  },
-  {
-    //끝났을때 모습
-    duration: 15,
-    x: "-365%",
-    y: "-30%",
-    rotation: 30,
-    scrollTrigger: {
-      trigger: ".two", //객체기준범위
-      start: "-30% 0%", //시작 지점 앞은 기준점 뒤는 바
-      end: "200% 80%", //끝 지점
-      scrub: 1, //부드러운 스크러빙
-      scale: "0.5",
-      // markers: true, //개발가이드선
-    },
-  }
-);
+//
 // 인포1
 gsap
   .timeline({
@@ -263,58 +219,6 @@ gsap
     0.8
   );
 
-//섹션 메인 텍스트 글자 크기 1 묶음
-gsap.from(".txt_scal11", {
-  scrollTrigger: {
-    duration: 100,
-    trigger: ".two_sec", //어느 요소에 스크롤이 도착했을 때 시작할건지
-    start: "-50% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
-    end: "100% 100%", //스크롤 트리거의 끝점 설정.
-    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
-    // markers: true, //기준점을 화면에 표시할지 설정.
-  },
-
-  y: "100%",
-  scale: 2,
-});
-gsap.to(".txt_scal11", {
-  scrollTrigger: {
-    trigger: ".two_sec",
-    // markers: false,
-  },
-  y: "0%",
-  scale: 1,
-});
-
-// 2
-//
-
-gsap.registerPlugin(ScrollTrigger);
-gsap.fromTo(
-  ".poto2",
-  {
-    //시작할때 모습
-    rotate: -30,
-    x: "150%",
-    y: "30%",
-  },
-  {
-    //끝났을때 모습
-    duration: 15,
-    x: "-190%",
-    y: "-30%",
-    rotation: 15,
-    scrollTrigger: {
-      trigger: ".three", //객체기준범위
-      start: "-100% 0%", //시작 지점
-      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
-      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
-      scrub: 1, //부드러운 스크러빙
-      scale: "0.5",
-      // markers: true, //개발가이드선
-    },
-  }
-);
 // 인포2
 gsap
   .timeline({
@@ -352,56 +256,6 @@ gsap
     0.8
   );
 
-//섹션 메인 텍스트 글자 크기 2 묶음
-gsap.from(".txt_scal2", {
-  scrollTrigger: {
-    duration: 50,
-    trigger: ".three", //어느 요소에 스크롤이 도착했을 때 시작할건지
-    start: "-50% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
-    end: "100% 100%", //스크롤 트리거의 끝점 설정.
-    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
-    // markers: true, //기준점을 화면에 표시할지 설정.
-  },
-  y: "100%",
-  scale: 2,
-});
-gsap.to(".txt_scal2", {
-  scrollTrigger: {
-    trigger: ".three",
-    markers: false,
-  },
-  y: "0%",
-  scale: 1,
-});
-
-//3
-
-gsap.registerPlugin(ScrollTrigger);
-gsap.fromTo(
-  ".poto3",
-  {
-    //시작할때 모습
-    rotate: -30,
-    x: "150%",
-    y: "30%",
-  },
-  {
-    //끝났을때 모습
-    duration: 15,
-    x: "-190%",
-    y: "-30%",
-    rotation: 10,
-    scrollTrigger: {
-      trigger: ".for", //객체기준범위
-      start: "-100% 0%", //시작 지점
-      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
-      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
-      scrub: 1, //부드러운 스크러빙
-      scale: 0.5,
-      markers: false, //개발가이드선
-    },
-  }
-);
 // 인포3
 gsap
   .timeline({
@@ -438,55 +292,7 @@ gsap
     },
     0.8
   );
-//섹션 메인 텍스트 글자 크기 3 묶음
-gsap.from(".txt_scal3", {
-  scrollTrigger: {
-    duration: 50,
-    trigger: ".for", //어느 요소에 스크롤이 도착했을 때 시작할건지
-    start: "-60% 10%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
-    end: "100% 100%", //스크롤 트리거의 끝점 설정.
-    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
-    // markers: true, //기준점을 화면에 표시할지 설정.
-  },
-  y: "100%",
-  scale: 2,
-});
-gsap.to(".txt_scal3", {
-  scrollTrigger: {
-    trigger: ".for",
-    markers: false,
-  },
-  y: "0%",
-  scale: 1,
-});
-// 4
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.fromTo(
-  ".poto4",
-  {
-    //시작할때 모습
-    rotate: -30,
-    x: "190%",
-    y: "30%",
-  },
-  {
-    //끝났을때 모습
-    duration: 10,
-    x: "-190%",
-    y: "-30%",
-    rotation: 15,
-    scrollTrigger: {
-      trigger: ".fiv", //객체기준범위
-      start: "-100% 0%", //시작 지점
-      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
-      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
-      scrub: 1, //부드러운 스크러빙
-      scale: 0.5,
-      markers: false, //개발가이드선
-    },
-  }
-);
 // 인포4
 gsap
   .timeline({
@@ -523,54 +329,7 @@ gsap
     },
     0.8
   );
-//섹션 메인 텍스트 글자 크기 4 묶음
-gsap.from(".txt_scal4", {
-  scrollTrigger: {
-    duration: 50,
-    trigger: ".fiv", //어느 요소에 스크롤이 도착했을 때 시작할건지
-    start: "-60% 10%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
-    end: "100% 100%", //스크롤 트리거의 끝점 설정.
-    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
-    // markers: true, //기준점을 화면에 표시할지 설정.
-  },
-  y: "100%",
-  scale: 2,
-});
-gsap.to(".txt_scal4", {
-  scrollTrigger: {
-    trigger: ".fiv",
-    markers: false,
-  },
-  y: "0%",
-  scale: 1,
-});
-// 5
-gsap.registerPlugin(ScrollTrigger);
-gsap.fromTo(
-  ".poto5",
-  {
-    //시작할때 모습
-    rotate: -30,
-    x: "190%",
-    y: "30%",
-  },
-  {
-    //끝났을때 모습
-    duration: 10,
-    x: "-190%",
-    y: "-30%",
-    rotation: 15,
-    scrollTrigger: {
-      trigger: ".six", //객체기준범위
-      start: "-100% 0%", //시작 지점
-      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
-      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
-      scrub: 1, //부드러운 스크러빙
-      scale: 0.5,
-      markers: false, //개발가이드선
-    },
-  }
-);
+
 // 인포5
 gsap
   .timeline({
@@ -607,55 +366,6 @@ gsap
     },
     0.8
   );
-//섹션 메인 텍스트 글자 크기 5 묶음
-gsap.from(".txt_scal5", {
-  scrollTrigger: {
-    duration: 50,
-    trigger: ".six", //어느 요소에 스크롤이 도착했을 때 시작할건지
-    start: "-60% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
-    end: "100% 100%", //스크롤 트리거의 끝점 설정.
-    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
-    // markers: true, //기준점을 화면에 표시할지 설정.
-  },
-  y: "100%",
-  scale: 2,
-});
-gsap.to(".txt_scal5", {
-  scrollTrigger: {
-    trigger: ".six",
-    markers: false,
-  },
-  y: "0%",
-  scale: 1,
-});
-// 6
-
-gsap.registerPlugin(ScrollTrigger);
-gsap.fromTo(
-  ".poto6",
-  {
-    //시작할때 모습
-    rotate: -30,
-    x: "120%",
-    y: "20%",
-  },
-  {
-    //끝났을때 모습
-    duration: 10,
-    x: "-190%",
-    y: "-30%",
-    rotation: 15,
-    scrollTrigger: {
-      trigger: ".sev", //객체기준범위
-      start: "-100% 0%", //시작 지점
-      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
-      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
-      scrub: 1, //부드러운 스크러빙
-      scale: 0.5,
-      markers: false, //개발가이드선
-    },
-  }
-);
 
 // 인포6
 gsap
@@ -694,57 +404,6 @@ gsap
     0.8
   );
 
-//섹션 메인 텍스트 글자 크기 6 묶음
-gsap.from(".txt_scal6", {
-  scrollTrigger: {
-    duration: 50,
-    trigger: ".sev", //어느 요소에 스크롤이 도착했을 때 시작할건지
-    start: "-60% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
-    end: "100% 100%", //스크롤 트리거의 끝점 설정.
-    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
-    // markers: true, //기준점을 화면에 표시할지 설정.
-  },
-  y: "100%",
-  scale: 2,
-});
-gsap.to(".txt_scal6", {
-  scrollTrigger: {
-    trigger: ".sev",
-    markers: false,
-  },
-  y: "0%",
-  scale: 1,
-});
-
-// 7
-
-gsap.registerPlugin(ScrollTrigger);
-gsap.fromTo(
-  ".poto7",
-  {
-    //시작할때 모습
-    rotate: -30,
-    x: "120%",
-    y: "20%",
-  },
-  {
-    //끝났을때 모습
-    duration: 10,
-    x: "-190%",
-    y: "-30%",
-    rotation: 15,
-    scrollTrigger: {
-      trigger: ".eig", //객체기준범위
-      start: "-100% 0%", //시작 지점
-      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
-      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
-      scrub: 1, //부드러운 스크러빙
-      scale: 0.5,
-      // markers: true, //개발가이드선
-    },
-  }
-);
-
 // 인포7
 gsap
   .timeline({
@@ -781,55 +440,7 @@ gsap
     },
     0.8
   );
-//섹션 메인 텍스트 글자 크기 7 묶음
-gsap.from(".txt_scal7", {
-  scrollTrigger: {
-    duration: 50,
-    trigger: ".eig", //어느 요소에 스크롤이 도착했을 때 시작할건지
-    start: "-60% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
-    end: "100% 100%", //스크롤 트리거의 끝점 설정.
-    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
-    // markers: true, //기준점을 화면에 표시할지 설정.
-  },
-  y: "100%",
-  scale: 2,
-});
-gsap.to(".txt_scal7", {
-  scrollTrigger: {
-    trigger: ".eig",
-    markers: false,
-  },
-  y: "0%",
-  scale: 1,
-});
 
-// 8
-gsap.registerPlugin(ScrollTrigger);
-gsap.fromTo(
-  ".poto8",
-  {
-    //시작할때 모습
-    rotate: -30,
-    x: "120%",
-    y: "20%",
-  },
-  {
-    //끝났을때 모습
-    duration: 10,
-    x: "-190%",
-    y: "-30%",
-    rotation: 15,
-    scrollTrigger: {
-      trigger: ".nine", //객체기준범위
-      start: "-100% 0%", //시작 지점
-      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
-      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
-      scrub: 1, //부드러운 스크러빙
-      scale: 0.5,
-      // markers: true, //개발가이드선
-    },
-  }
-);
 // 인포8
 gsap
   .timeline({
@@ -866,54 +477,7 @@ gsap
     },
     0.8
   );
-//섹션 메인 텍스트 글자 크기 8 묶음
-gsap.from(".txt_scal8", {
-  scrollTrigger: {
-    duration: 50,
-    trigger: ".nine", //어느 요소에 스크롤이 도착했을 때 시작할건지
-    start: "-60% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
-    end: "100% 100%", //스크롤 트리거의 끝점 설정.
-    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
-    // markers: true, //기준점을 화면에 표시할지 설정.
-  },
-  y: "100%",
-  scale: 2,
-});
-gsap.to(".txt_scal8", {
-  scrollTrigger: {
-    trigger: ".nine",
-    markers: false,
-  },
-  y: "0%",
-  scale: 1,
-});
-// 9
-gsap.registerPlugin(ScrollTrigger);
-gsap.fromTo(
-  ".poto9",
-  {
-    //시작할때 모습
-    rotate: -30,
-    x: "120%",
-    y: "20%",
-  },
-  {
-    //끝났을때 모습
-    duration: 10,
-    x: "-190%",
-    y: "-30%",
-    rotation: 15,
-    scrollTrigger: {
-      trigger: ".ten", //객체기준범위
-      start: "-100% 0%", //시작 지점
-      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
-      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
-      scrub: 1, //부드러운 스크러빙
-      scale: 0.5,
-      // markers: true, //개발가이드선
-    },
-  }
-);
+
 // 인포9
 gsap
   .timeline({
@@ -950,13 +514,441 @@ gsap
     },
     0.8
   );
+// --------------------------------------
+
+// 섹션2 영상 1 묶음
+
+gsap.fromTo(
+  ".poto1",
+  {
+    //시작할때 모습
+    rotate: -10,
+    x: "140%",
+    y: "30%",
+    scale: "1",
+  },
+  {
+    //끝났을때 모습
+    duration: 15,
+    x: "-280%",
+    y: "-30%",
+    rotation: 15,
+    scrollTrigger: {
+      trigger: ".two", //객체기준범위
+      start: "-100% 0%", //시작 지점 앞은 기준점 뒤는 바
+      end: "200% 80%", //끝 지점
+      scrub: 1, //부드러운 스크러빙
+      scale: "0.5",
+      // markers: true, //개발가이드선
+    },
+  }
+);
+// 2
+//
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo(
+  ".poto2",
+  {
+    //시작할때 모습
+    rotate: -10,
+    x: "140%",
+    y: "30%",
+  },
+  {
+    //끝났을때 모습
+    duration: 15,
+    x: "-250%",
+    y: "-30%",
+    rotation: 15,
+    scrollTrigger: {
+      trigger: ".three", //객체기준범위
+      start: "-100% 0%", //시작 지점
+      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
+      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+      scrub: 1, //부드러운 스크러빙
+      scale: "0.5",
+      // markers: true, //개발가이드선
+    },
+  }
+);
+//3
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo(
+  ".poto3",
+  {
+    //시작할때 모습
+    rotate: -10,
+    x: "140%",
+    y: "30%",
+  },
+  {
+    //끝났을때 모습
+    duration: 15,
+    x: "-250%",
+    y: "-30%",
+    rotation: 15,
+    scrollTrigger: {
+      trigger: ".for", //객체기준범위
+      start: "-100% 0%", //시작 지점
+      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
+      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+      scrub: 1, //부드러운 스크러빙
+      scale: 0.5,
+      markers: false, //개발가이드선
+    },
+  }
+);
+// 4
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo(
+  ".poto4",
+  {
+    //시작할때 모습
+    rotate: -10,
+    x: "140%",
+    y: "30%",
+  },
+  {
+    //끝났을때 모습
+    duration: 15,
+    x: "-250%",
+    y: "-30%",
+    rotation: 15,
+    scrollTrigger: {
+      trigger: ".fiv", //객체기준범위
+      start: "-100% 0%", //시작 지점
+      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
+      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+      scrub: 1, //부드러운 스크러빙
+      scale: 0.5,
+      markers: false, //개발가이드선
+    },
+  }
+);
+
+// 5
+gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo(
+  ".poto5",
+  {
+    //시작할때 모습
+    rotate: -10,
+    x: "140%",
+    y: "30%",
+  },
+  {
+    //끝났을때 모습
+    duration: 15,
+    x: "-250%",
+    y: "-30%",
+    rotation: 15,
+    scrollTrigger: {
+      trigger: ".six", //객체기준범위
+      start: "-100% 0%", //시작 지점
+      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
+      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+      scrub: 1, //부드러운 스크러빙
+      scale: 0.5,
+      markers: false, //개발가이드선
+    },
+  }
+);
+// 6
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo(
+  ".poto6",
+  {
+    //시작할때 모습
+    rotate: -10,
+    x: "140%",
+    y: "30%",
+  },
+  {
+    //끝났을때 모습
+    duration: 15,
+    x: "-250%",
+    y: "-30%",
+    rotation: 15,
+    scrollTrigger: {
+      trigger: ".sev", //객체기준범위
+      start: "-100% 0%", //시작 지점
+      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
+      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+      scrub: 1, //부드러운 스크러빙
+      scale: 0.5,
+      markers: false, //개발가이드선
+    },
+  }
+);
+// 7
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo(
+  ".poto7",
+  {
+    //시작할때 모습
+    rotate: -10,
+    x: "140%",
+    y: "30%",
+  },
+  {
+    //끝났을때 모습
+    duration: 15,
+    x: "-250%",
+    y: "-30%",
+    rotation: 15,
+    scrollTrigger: {
+      trigger: ".eig", //객체기준범위
+      start: "-100% 0%", //시작 지점
+      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
+      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+      scrub: 1, //부드러운 스크러빙
+      scale: 0.5,
+      // markers: true, //개발가이드선
+    },
+  }
+);
+
+// 8
+gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo(
+  ".poto8",
+  {
+    //시작할때 모습
+    rotate: -10,
+    x: "140%",
+    y: "30%",
+  },
+  {
+    //끝났을때 모습
+    duration: 15,
+    x: "-250%",
+    y: "-30%",
+    rotation: 15,
+    scrollTrigger: {
+      trigger: ".nine", //객체기준범위
+      start: "-100% 0%", //시작 지점
+      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
+      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+      scrub: 1, //부드러운 스크러빙
+      scale: 0.5,
+      // markers: true, //개발가이드선
+    },
+  }
+);
+
+// 9
+gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo(
+  ".poto9",
+  {
+    //시작할때 모습
+    rotate: -10,
+    x: "140%",
+    y: "30%",
+  },
+  {
+    //끝났을때 모습
+    duration: 10,
+    x: "-250%",
+    y: "-30%",
+    rotation: 15,
+    scrollTrigger: {
+      trigger: ".ten", //객체기준범위
+      start: "-100% 0%", //시작 지점
+      end: "200% 80%", //끝 지점 앞 150만큼 뒤 50 증가
+      // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+      scrub: 1, //부드러운 스크러빙
+      scale: 0.5,
+      // markers: true, //개발가이드선
+    },
+  }
+);
+
+// -------------------------------------------
+//섹션 메인 텍스트 글자 크기 1 묶음
+gsap.from(".txt_scal11", {
+  scrollTrigger: {
+    duration: 100,
+    trigger: ".two_sec", //어느 요소에 스크롤이 도착했을 때 시작할건지
+    start: "-100% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
+    end: "120% 100%", //스크롤 트리거의 끝점 설정.
+    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
+    // markers: true, //기준점을 화면에 표시할지 설정.
+  },
+
+  y: "100%",
+  scale: 2,
+});
+gsap.to(".txt_scal11", {
+  scrollTrigger: {
+    trigger: ".two_sec",
+    // markers: true,
+  },
+  y: "0%",
+  scale: 1,
+});
+
+//섹션 메인 텍스트 글자 크기 2 묶음
+gsap.from(".txt_scal2", {
+  scrollTrigger: {
+    duration: 50,
+    trigger: ".three", //어느 요소에 스크롤이 도착했을 때 시작할건지
+    start: "-100% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
+    end: "120% 100%", //스크롤 트리거의 끝점 설정.
+    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
+    // markers: true, //기준점을 화면에 표시할지 설정.
+  },
+  y: "100%",
+  scale: 2,
+});
+gsap.to(".txt_scal2", {
+  scrollTrigger: {
+    trigger: ".three",
+    markers: false,
+  },
+  y: "0%",
+  scale: 1,
+});
+
+//섹션 메인 텍스트 글자 크기 3 묶음
+gsap.from(".txt_scal3", {
+  scrollTrigger: {
+    duration: 50,
+    trigger: ".for", //어느 요소에 스크롤이 도착했을 때 시작할건지
+    start: "-100% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
+    end: "120% 100%", //스크롤 트리거의 끝점 설정.
+    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
+    // markers: true, //기준점을 화면에 표시할지 설정.
+  },
+  y: "100%",
+  scale: 2,
+});
+gsap.to(".txt_scal3", {
+  scrollTrigger: {
+    trigger: ".for",
+    markers: false,
+  },
+  y: "0%",
+  scale: 1,
+});
+//섹션 메인 텍스트 글자 크기 4 묶음
+gsap.from(".txt_scal4", {
+  scrollTrigger: {
+    duration: 50,
+    trigger: ".fiv", //어느 요소에 스크롤이 도착했을 때 시작할건지
+    start: "-60% 10%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
+    end: "100% 100%", //스크롤 트리거의 끝점 설정.
+    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
+    // markers: true, //기준점을 화면에 표시할지 설정.
+  },
+  y: "100%",
+  scale: 2,
+});
+gsap.to(".txt_scal4", {
+  scrollTrigger: {
+    trigger: ".fiv",
+    markers: false,
+  },
+  y: "0%",
+  scale: 1,
+});
+//섹션 메인 텍스트 글자 크기 5 묶음
+gsap.from(".txt_scal5", {
+  scrollTrigger: {
+    duration: 50,
+    trigger: ".six", //어느 요소에 스크롤이 도착했을 때 시작할건지
+    start: "-100% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
+    end: "120% 100%", //스크롤 트리거의 끝점 설정.
+    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
+    // markers: true, //기준점을 화면에 표시할지 설정.
+  },
+  y: "100%",
+  scale: 2,
+});
+gsap.to(".txt_scal5", {
+  scrollTrigger: {
+    trigger: ".six",
+    markers: false,
+  },
+  y: "0%",
+  scale: 1,
+});
+//섹션 메인 텍스트 글자 크기 6 묶음
+gsap.from(".txt_scal6", {
+  scrollTrigger: {
+    duration: 50,
+    trigger: ".sev", //어느 요소에 스크롤이 도착했을 때 시작할건지
+    start: "-100% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
+    end: "120% 100%", //스크롤 트리거의 끝점 설정.
+    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
+    // markers: true, //기준점을 화면에 표시할지 설정.
+  },
+  y: "100%",
+  scale: 2,
+});
+gsap.to(".txt_scal6", {
+  scrollTrigger: {
+    trigger: ".sev",
+    markers: false,
+  },
+  y: "0%",
+  scale: 1,
+});
+//섹션 메인 텍스트 글자 크기 7 묶음
+gsap.from(".txt_scal7", {
+  scrollTrigger: {
+    duration: 50,
+    trigger: ".eig", //어느 요소에 스크롤이 도착했을 때 시작할건지
+    start: "-100% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
+    end: "120% 100%", //스크롤 트리거의 끝점 설정.
+    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
+    // markers: true, //기준점을 화면에 표시할지 설정.
+  },
+  y: "100%",
+  scale: 2,
+});
+gsap.to(".txt_scal7", {
+  scrollTrigger: {
+    trigger: ".eig",
+    markers: false,
+  },
+  y: "0%",
+  scale: 1,
+});
+
+//섹션 메인 텍스트 글자 크기 8 묶음
+gsap.from(".txt_scal8", {
+  scrollTrigger: {
+    duration: 50,
+    trigger: ".nine", //어느 요소에 스크롤이 도착했을 때 시작할건지
+    start: "-100% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
+    end: "120% 100%", //스크롤 트리거의 끝점 설정.
+    scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
+    // markers: true, //기준점을 화면에 표시할지 설정.
+  },
+  y: "100%",
+  scale: 2,
+});
+gsap.to(".txt_scal8", {
+  scrollTrigger: {
+    trigger: ".nine",
+    markers: false,
+  },
+  y: "0%",
+  scale: 1,
+});
 //섹션 메인 텍스트 글자 크기 9 묶음
 gsap.from(".txt_scal9", {
   scrollTrigger: {
     duration: 50,
     trigger: ".ten", //어느 요소에 스크롤이 도착했을 때 시작할건지
-    start: "-60% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
-    end: "100% 100%", //스크롤 트리거의 끝점 설정.
+    start: "-100% 0%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
+    end: "120% 100%", //스크롤 트리거의 끝점 설정.
     scrub: 1, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
     // markers: true, //기준점을 화면에 표시할지 설정.
   },
@@ -966,3211 +958,106 @@ gsap.from(".txt_scal9", {
 gsap.to(".txt_scal9", {
   scrollTrigger: {
     trigger: ".ten",
-    markers: true,
+    // markers: true,
   },
   y: "0%",
   scale: 1,
 });
-
-//
+// ------------------------------------------
 // 하단 리그
-// 박스1에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_1", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_1 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_1", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_1 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_1", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_1 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
+// 반복할 박스의 총 개수
+const totalBoxes = 31; // .box_1부터 .box_30까지
 
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_1", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_1 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-//
-// 지피티
-// 박스2에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_2", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_2 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_2", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_2 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_2", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_2 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
+// GSAP 타임라인 생성 및 반복문으로 애니메이션 적용
+for (let boxIndex = 1; boxIndex <= totalBoxes; boxIndex++) {
+  const boxSelector = `.awards_list_inner .box_${boxIndex} h3`;
 
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_2", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_2 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_2", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_2 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: `.awards_list_inner .box_${boxIndex}`, // 각 박스를 기준으로 범위 설정
+        start: "0% 80%", // 시작 지점
+        end: "100% 80%", // 끝 지점
+        // markers: true, // 개발가이드선
+        // scrub: 1,
+      },
+    })
+    .fromTo(
+      `${boxSelector}:nth-child(1)`,
+      {
+        y: "100px",
+        duration: 1,
+      },
+      {
+        y: "0px",
+        duration: 1,
+      },
+      0.5
+    )
+    .fromTo(
+      `${boxSelector}:nth-child(2)`,
+      {
+        y: "100px",
+        duration: 1,
+      },
+      {
+        y: "0px",
+        duration: 1,
+      },
+      0.7
+    )
+    .fromTo(
+      `${boxSelector}:nth-child(3)`,
+      {
+        y: "100px",
+        duration: 1,
+      },
+      {
+        y: "0px",
+        duration: 1,
+      },
+      0.9
+    )
+    .fromTo(
+      `${boxSelector}:nth-child(4)`,
+      {
+        y: "100px",
+        duration: 1,
+      },
+      {
+        y: "0px",
+        duration: 1,
+      },
+      1
+    );
+}
 
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_2", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_2 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스3에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_3", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_3 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_3", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_3 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_3", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_3 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_3", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_3 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-// 박스4에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_4", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_4 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_4", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_4 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_4", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_4 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_4", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_4 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-// 박스5에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_5", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_5 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_5", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_5 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_5", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_5 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_5", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_5 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스6에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_6", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_6 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_6", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_6 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_6", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_6 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_6", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_6 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스7에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_7", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_7 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_7", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_7 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_7", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_7 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_7", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_7 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스8에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_8", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_8 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_8", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_8 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_8", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_8 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_8", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_8 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스9에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_9", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_9 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_9", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_9 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_9", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_9 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_9", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_9 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스10에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_10", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_10 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_10", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_10 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_10", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_10 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_10", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_10 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스11에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_11", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_11 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_11", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_11 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_11", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_11 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_11", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_11 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스12에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_12", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_12 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_12", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_12 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_12", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_12 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_12", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_12 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스13에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_13", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_13 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_13", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_13 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_13", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_13 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_13", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_13 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스14에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_14", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_14 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_14", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_14 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_14", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_14 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_14", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_14 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스15에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_15", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_15 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_15", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_15 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_15", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_15 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_15", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_15 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스16에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_16", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_16 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_16", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_16 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_16", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_16 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_16", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_16 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스17에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_17", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_17 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_17", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_17 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_17", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_17 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_17", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_17 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스17에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_17", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_17 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_17", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_17 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_17", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_17 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_17", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_17 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스18에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_18", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_18 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_18", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_18 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_18", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_18 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_18", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_18 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-
-// 박스19에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_19", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_19 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_19", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_19 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_19", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_19 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_19", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_19 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-
-// 박스20에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_20", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_20 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_20", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_20 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_20", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_20 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_20", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_20 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-
-// 박스21에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_21", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_21 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_21", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_21 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_21", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_21 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_21", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_21 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-
-// 박스22에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_22", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_22 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_22", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_22 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_22", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_22 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_22", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_22 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스23에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_23", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_23 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_23", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_23 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_23", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_23 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_23", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_23 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스24에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_24", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_24 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_24", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_24 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_24", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_24 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_24", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_24 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-
-// 박스25에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_25", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_25 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_25", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_25 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_25", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_25 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_25", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_25 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스26에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_26", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_26 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_26", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_26 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_26", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_26 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_26", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_26 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스27에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_27", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_27 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_27", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_27 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_27", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_27 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_27", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_27 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-
-// 박스28에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_28", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_28 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_28", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_28 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_28", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_28 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_28", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_28 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스29에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_29", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_29 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_29", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_29 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_29", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_29 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_29", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_29 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-// 박스30에 첫번째 h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_30", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_30 h3:first-child",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.5
-  );
-// 2h2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_30", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_30 h3:nth-child(2)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.7
-  );
-// 2h3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_30", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_30 h3:nth-child(3)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    0.9
-  );
-
-// 2h4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".awards_list_inner .box_30", //객체기준범위
-      start: "0% 80%", //시작 지점
-      end: "100% 80%",
-      // markers: true, //개발가이드선
-      // scrub: 1,
-    },
-  })
-  .fromTo(
-    ".awards_list_inner .box_30 h3:nth-child(4)",
-    {
-      // 시작
-      y: "100px",
-      duration: 1,
-    },
-    {
-      // 끝
-      y: "0px",
-      duration: 1,
-    },
-    1
-  );
-
-//
-//
-//
-//
-//
 // num
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".num", //객체기준범위
+      start: "-200% 50%", //시작 지점
+      end: "0% 80%",
+      // markers: true, //개발가이드선
+      // scrub: 1,
+    },
+  })
+  .fromTo(
+    ".num_1",
+    {
+      // 시작
+      y: "0%",
+      duration: 1,
+    },
+    {
+      // 끝
+      y: "-100%",
+      duration: 1,
+    },
+    0.5
+  );
+// 하단 반응형 2023 중 2
 gsap
   .timeline({
     scrollTrigger: {
@@ -4321,56 +1208,34 @@ gsap
     1.4
   );
 // 메인 글씨 위에서 아래로 선 움직였을때 무빙
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".loop-text-holder", //객체기준범위
-      start: "-30% 0%", //시작 지점
-      end: "10% 15%",
-      // markers: true, //개발가이드선
-      scrub: 1,
-    },
-  })
-  .fromTo(
-    ".loop-auto-size",
-    {
-      // 시작
-      y: "0%",
-      duration: 1,
-      ease: "sine.out",
-    },
-    {
-      // 끝
-      y: "-40%",
-      duration: 1,
-      ease: "sine.out",
-    },
-    0.5
-  );
-// 메인 글씨 위에서 아래로 칠  움직였을때 무빙
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".loop-text-holder", //객체기준범위
-      start: "-30% 0%", //시작 지점
-      end: "10% 15%",
-      // markers: true, //개발가이드선
-      scrub: 1,
-    },
-  })
-  .fromTo(
-    ".loop-auto-size2",
-    {
-      // 시작
-      y: "0%",
-      duration: 1,
-      ease: "sine.out",
-    },
-    {
-      // 끝
-      y: "-40%",
-      duration: 1,
-      ease: "sine.out",
-    },
-    0.5
-  );
+// 애니메이션을 생성하는 함수
+function createScrollAnimation(selector) {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".loop-text-holder",
+        start: "-30% 0%",
+        end: "10% 15%",
+        // markers: true, // 개발가이드선
+        scrub: 1,
+      },
+    })
+    .fromTo(
+      selector,
+      {
+        y: "0%",
+        duration: 1,
+        ease: "sine.out",
+      },
+      {
+        y: "-40%",
+        duration: 1,
+        ease: "sine.out",
+      },
+      0.5
+    );
+}
+
+// 애니메이션을 적용할 각 요소에 대해 함수 호출
+createScrollAnimation(".loop-auto-size");
+createScrollAnimation(".loop-auto-size2");
