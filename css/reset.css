@@ -107,7 +107,7 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+  /* display: block; */
   z-index: 1;
 }
 body {

@@ -823,7 +823,6 @@ a {
   will-change: transform;
   color: #221508;
   overflow: hidden;
-  letter-spacing: -46px;
 }
 /* 색 텍스트 첫 애니메이션  위에서 아래로 떨어지는 */
 @keyframes name_line2 {
@@ -871,14 +870,13 @@ a {
 .main_poto {
   justify-content: center;
   align-items: center;
-  height: 108%;
+  /* height: 108%; */
   display: flex;
   position: relative;
   overflow: hidden;
   width: fit-content;
   margin: 0 auto;
   top: 138px;
-  height: fit-content;
   z-index: 29;
 
   /* 윤곽선 */
@@ -951,7 +949,7 @@ a {
 .div-block-12 {
   z-index: 100;
   position: absolute;
-  bottom: 6vw;
+  bottom: -13vw;
   left: 4vw;
   font-family: "Roboto", sans-serif;
 }
@@ -967,6 +965,7 @@ a {
   margin: 0 auto;
   height: fit-content;
   box-sizing: border-box;
+  margin-top: 15vw;
 
   background-color: #fffbf7;
 }
@@ -1024,6 +1023,7 @@ a {
 /* 두번째 슬라이드 제목 크기 수정 */
 
 /* 인포 항목 */
+
 .info_a,
 .info_b {
   cursor: default;
@@ -1380,7 +1380,6 @@ footer {
   font-size: 2vw;
   font-weight: 300;
   line-height: 1.2;
-  letter-spacing: -4px;
 }
 .sm_txt {
   color: #6e6e6e;
@@ -1432,7 +1431,6 @@ span {
   height: 36px;
   margin-top: 4px;
   transform: translateY(12%);
-  letter-spacing: -4px;
 }
 .footer_sol > li {
   height: 40px;
@@ -1529,7 +1527,7 @@ span {
   margin-bottom: 3vw;
 }
 .fo_sli_font {
-  font-size: 1.7rem;
+  font-size: 1rem;
 }
 /* 마지막 슬라이드 모음 */
 .slider_last {
@@ -1548,6 +1546,7 @@ span {
   height: 9vw;
   position: relative;
   right: 1%;
+  margin-top: 15vw;
 }
 .num h3 {
   font-size: 27vw;

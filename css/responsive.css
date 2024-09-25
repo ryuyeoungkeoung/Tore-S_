@@ -1,8 +1,210 @@
 @charset "utf-8";
-@media (max-width: 1735px) {
+@import url(../css/reset.css);
+
+@media screen and (max-width: 1400px) {
+  .all_wrap {
+    margin-top: 45vw;
+  }
 }
-@media (max-width: 992px) {
+@media screen and (max-width: 1200px) {
+  .main_poto2 {
+    top: 0%;
+  }
 }
+@media screen and (max-width: 1000px) {
+  .poto4,
+  .poto5,
+  .poto6,
+  .poto7,
+  .poto8 {
+    top: -60px;
+  }
+}
+/* 지셉 900부터 만져야함 */
+@media screen and (max-width: 900px) {
+}
+@media screen and (max-width: 600px) {
+  .main_poto {
+    width: 83%;
+    height: 90%;
+  }
+}
+
 /* 미디어쿼리 기본형 */
-@media (max-width: 470px) {
+@media screen and (max-width: 480px) {
+  .main_poto {
+    width: 70%;
+    height: 56%;
+    justify-content: normal;
+    align-items: normal;
+  }
+  .all_wrap {
+    margin-top: 0vw;
+  }
+  .txt_22 h2 {
+    font-size: 2vw;
+  }
+  .txt_2 {
+    top: 47vw;
+  }
+  .txt_2 h2 {
+    font-size: 2vw;
+  }
+  .txt_22 {
+    top: 25vw;
+    right: -92vw;
+  }
+  .div-block-12 {
+    bottom: 28vw;
+  }
+  .menu-text.sub {
+    font-size: 3vw;
+  }
+  .menu_holder {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .loop-text-holder {
+    top: 14%;
+  }
+  .loop-auto-size > div h1 {
+    font-size: 13vw;
+    opacity: 0.3;
+  }
+  .loop-text-holder2 {
+    top: -20%;
+  }
+  .loop-auto-size2 > div h1 {
+    font-size: 15vw;
+    letter-spacing: -10px;
+  }
+  .re_div {
+    display: block;
+  }
+  .info {
+    margin-top: 5vw;
+  }
+
+  .info_1 {
+    font-size: 2.5vw;
+    gap: 10px;
+    width: fit-content;
+    text-align: center;
+    margin-left: 50px;
+    margin-left: 0px;
+  }
+  .info_2 {
+    font-size: 2.5vw;
+    gap: 0px;
+    width: 43%;
+  }
+  .info_4 a:first-child h2 {
+    color: #000000;
+  }
+  .info_3 {
+    position: absolute;
+    top: 106%;
+    font-size: 2.5vw;
+    left: 21%;
+  }
+  .info_4 {
+    position: absolute;
+    top: 106%;
+    font-size: 2.5vw;
+    left: 63%;
+  }
+  .info_4 a:last-child h3 {
+    font-size: 2.5vw;
+  }
+  /* 박스들 */
+  .box > h3 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 4.5vw;
+    margin-bottom: 1%;
+  }
+  .box > h3:nth-child(2) {
+    font-size: 2vw;
+  }
+  .box > h3:last-child {
+    font-size: 1.9vw;
+  }
+  .box > h3:nth-child(3) {
+    font-size: 3.2vw;
+  }
+  .box {
+    flex-flow: wrap;
+    align-content: stretch;
+    align-items: stretch;
+    position: relative;
+    padding: 5.6vw;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  .box > h3:nth-child(2) {
+    font-size: 3vw;
+    position: absolute;
+    left: 1px;
+    top: 28%;
+    text-align: end;
+    display: flex;
+    justify-content: end;
+  }
+  .box > h3:last-child {
+    position: absolute;
+    right: 0%;
+    top: 73%;
+  }
+  #scroll_3 {
+    display: block;
+  }
+  .awards_list {
+    margin-top: 25vw;
+  }
+  .middle_txt {
+    width: 98%;
+    font-size: 5.5vw;
+    font-weight: 500;
+    padding: 4%;
+    padding-bottom: 0%;
+  }
+  .sm_txt {
+    margin-bottom: 20vw;
+  }
+  .sm_txt {
+    font-size: 2vw;
+    font-weight: 500;
+    padding: 3%;
+  }
+  .one_wrap > h2 {
+    font-size: 2vw;
+    padding: 3%;
+  }
+  .footer_sol > li > a {
+    letter-spacing: -2px;
+  }
+  .fo_sli {
+    font-size: 4vw;
+  }
+
+  .footer_sol {
+    padding-left: 3%;
+  }
+  .two_wrap > h2 {
+    padding-left: 3%;
+    margin-bottom: 0vw;
+    font-size: 2vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .main_poto {
+    width: 71%;
+    height: 47%;
+  }
+  .div-block-12 {
+    bottom: 60vw;
+  }
 }
