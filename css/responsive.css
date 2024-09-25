@@ -32,6 +32,9 @@
 
 /* 미디어쿼리 기본형 */
 @media screen and (max-width: 480px) {
+  #cursor {
+    display: none;
+  }
   .main_poto {
     width: 70%;
     height: 56%;
