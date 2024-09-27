@@ -107,9 +107,9 @@ menu_contact.addEventListener("click", () => {
   });
 });
 
-// 스크롤 비활성화
+// 스크롤 비
 document.addEventListener("DOMContentLoaded", function () {
-  // 4초 동안 스크롤 비활성화
+  // 4초 동안 스크롤 비
   document.body.classList.add("no-scroll");
   setTimeout(() => {
     document.body.classList.remove("no-scroll");
@@ -121,10 +121,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const textElement = document.querySelector("#next-text_1");
 
   if (textElement) {
-    // <br> tag
     const text = "Interactive Designer & Co-Founder at Baseborn";
 
-    //<span> tags  <br> tags
     const html = text
       .split("")
       .map((char, index) => {
@@ -166,7 +164,7 @@ function scrollToTopAfterDelay(delay = 3200) {
     window.scrollTo({
       top: 0,
     });
-  }, delay); // delay: 대기 시간 (밀리초), 기본값은 3초
+  }, delay);
 }
 // 스크롤 트리거
 gsap.registerPlugin(ScrollTrigger);
@@ -184,337 +182,40 @@ gsap.fromTo(
   },
   2
 );
-//
-// 인포1
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".two", //객체기준범위
-      start: "0% 10%", //시작 지점
-      //markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".two .info_a",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.5
-  );
 
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".two", //객체기준범위
-      start: "0% 10%", //시작 지점
-      //markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".two .info_b",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.8
-  );
+const sections = [
+  { class: ".two", info: [".info_a", ".info_b"] },
+  { class: ".three", info: [".info_a", ".info_b"] },
+  { class: ".for", info: [".info_a", ".info_b"] },
+  { class: ".fiv", info: [".info_a", ".info_b"] },
+  { class: ".six", info: [".info_a", ".info_b"] },
+  { class: ".sev", info: [".info_a", ".info_b"] },
+  { class: ".eig", info: [".info_a", ".info_b"] },
+  { class: ".nine", info: [".info_a", ".info_b"] },
+  { class: ".ten", info: [".info_a", ".info_b"] },
+];
 
-// 인포2
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".three", //객체기준범위
-      start: "0% 0%", //시작 지점
-      end: "10% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".three .info_a",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.5
-  );
+sections.forEach((section) => {
+  section.info.forEach((info, index) => {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: section.class,
+          start: "0% 10%",
+          end: "0% 10%",
+          // 개발가이드선
+        },
+      })
+      .to(
+        `${section.class} ${info}`,
+        {
+          y: "-20px",
+        },
+        index === 0 ? 0.5 : 0.8
+      );
+  });
+});
 
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".three", //객체기준범위
-      start: "0% 0%", //시작 지점
-      end: "10% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".three .info_b",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.8
-  );
-
-// 인포3
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".for", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".for .info_a",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.5
-  );
-
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".for", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".for .info_b",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.8
-  );
-
-// 인포4
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".fiv", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".fiv .info_a",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.5
-  );
-
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".fiv", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".fiv .info_b",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.8
-  );
-
-// 인포5
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".six", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".six .info_a",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.5
-  );
-
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".six", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".six .info_b",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.8
-  );
-
-// 인포6
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".sev", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".sev .info_a",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.5
-  );
-
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".sev", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".sev .info_b",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.8
-  );
-
-// 인포7
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".eig", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".eig .info_a",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.5
-  );
-
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".eig", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".eig .info_b",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.8
-  );
-
-// 인포8
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".nine", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".nine .info_a",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.5
-  );
-
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".nine", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".nine .info_b",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.8
-  );
-
-// 인포9
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".ten", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".ten .info_a",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.5
-  );
-
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".ten", //객체기준범위
-      start: "0% 10%", //시작 지점
-      end: "0% 10%",
-      // markers: true, //개발가이드선
-    },
-  })
-  .to(
-    ".ten .info_b",
-    {
-      // 시작
-      y: "-20px",
-    },
-    0.8
-  );
 // --------------------------------------
 // GSAP와 ScrollTrigger 플러그인 등록1
 gsap.registerPlugin(ScrollTrigger);
@@ -540,7 +241,6 @@ ScrollTrigger.matchMedia({
           end: "200% 80%",
           scrub: 1,
           scale: "0.5",
-          // markers: true,
         },
       }
     );
@@ -566,7 +266,6 @@ ScrollTrigger.matchMedia({
           end: "200% 0%",
           scrub: 1,
           scale: "0.5",
-          // markers: true,
         },
       }
     );
@@ -601,7 +300,6 @@ ScrollTrigger.matchMedia({
           end: "200% -20%",
           scrub: 1,
           scale: "0.5",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -630,7 +328,6 @@ ScrollTrigger.matchMedia({
           end: "150% -60%",
           scrub: 1,
           scale: "0.6",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -665,7 +362,6 @@ ScrollTrigger.matchMedia({
           end: "200% -20%",
           scrub: 1,
           scale: "0.5",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -694,7 +390,6 @@ ScrollTrigger.matchMedia({
           end: "150% -150%",
           scrub: 1,
           scale: "0.6",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -730,7 +425,6 @@ ScrollTrigger.matchMedia({
           end: "200% -20%",
           scrub: 1,
           scale: "0.5",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -759,7 +453,6 @@ ScrollTrigger.matchMedia({
           end: "150% -150%",
           scrub: 1,
           scale: "0.6",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -795,7 +488,6 @@ ScrollTrigger.matchMedia({
           end: "200% -20%",
           scrub: 1,
           scale: "0.5",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -824,7 +516,6 @@ ScrollTrigger.matchMedia({
           end: "150% -150%",
           scrub: 1,
           scale: "0.6",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -860,7 +551,6 @@ ScrollTrigger.matchMedia({
           end: "200% -20%",
           scrub: 1,
           scale: "0.5",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -889,7 +579,6 @@ ScrollTrigger.matchMedia({
           end: "150% -150%",
           scrub: 1,
           scale: "0.6",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -922,7 +611,6 @@ ScrollTrigger.matchMedia({
           end: "200% -20%",
           scrub: 1,
           scale: "0.5",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -951,7 +639,6 @@ ScrollTrigger.matchMedia({
           end: "400% -50%",
           scrub: 1,
           scale: "0.6",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -984,7 +671,6 @@ ScrollTrigger.matchMedia({
           end: "200% -20%",
           scrub: 1,
           scale: "0.5",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -1013,7 +699,6 @@ ScrollTrigger.matchMedia({
           end: "150% -150%",
           scrub: 1,
           scale: "0.6",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -1046,7 +731,6 @@ ScrollTrigger.matchMedia({
           end: "200% -20%",
           scrub: 1,
           scale: "0.5",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -1075,7 +759,6 @@ ScrollTrigger.matchMedia({
           end: "150% -150%",
           scrub: 1,
           scale: "0.6",
-          // markers: true, // 개발 가이드 선 활성화
         },
       }
     );
@@ -1094,7 +777,6 @@ ScrollTrigger.matchMedia({
         start: "-100% 0%",
         end: "120% 100%",
         scrub: 1,
-        // markers: true,
       },
       y: "100%",
       scale: 2,
@@ -1103,7 +785,6 @@ ScrollTrigger.matchMedia({
     gsap.to(".txt_scal11", {
       scrollTrigger: {
         trigger: ".two_sec",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1119,16 +800,14 @@ ScrollTrigger.matchMedia({
         start: "-150% 100%",
         end: "100% 0%",
         scrub: 1,
-        // markers: true,
       },
-      y: "50%", // 애니메이션의 시작 위치 조정
-      scale: 1.5, // 스케일 조정
+      y: "50%",
+      scale: 1.5,
     });
 
     gsap.to(".txt_scal11", {
       scrollTrigger: {
         trigger: ".two_sec",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1147,7 +826,6 @@ ScrollTrigger.matchMedia({
         start: "-100% 0%",
         end: "120% 100%",
         scrub: 1,
-        // markers: true,
       },
       y: "100%",
       scale: 2,
@@ -1156,7 +834,6 @@ ScrollTrigger.matchMedia({
     gsap.to(".txt_scal2", {
       scrollTrigger: {
         trigger: ".three",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1172,16 +849,14 @@ ScrollTrigger.matchMedia({
         start: "-150% 100%",
         end: "100% 50%",
         scrub: 1,
-        // markers: true,
       },
-      y: "50%", // 애니메이션의 시작 위치 조정
-      scale: 1.5, // 스케일 조정
+      y: "50%",
+      scale: 1.5,
     });
 
     gsap.to(".txt_scal2", {
       scrollTrigger: {
         trigger: ".three",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1201,7 +876,6 @@ ScrollTrigger.matchMedia({
         start: "-100% 0%",
         end: "120% 100%",
         scrub: 1,
-        // markers: true,
       },
       y: "100%",
       scale: 2,
@@ -1210,7 +884,6 @@ ScrollTrigger.matchMedia({
     gsap.to(".txt_scal3", {
       scrollTrigger: {
         trigger: ".for",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1226,16 +899,14 @@ ScrollTrigger.matchMedia({
         start: "-150% 100%",
         end: "100% 50%",
         scrub: 1,
-        // markers: true,
       },
-      y: "50%", // 애니메이션의 시작 위치 조정
-      scale: 1.5, // 스케일 조정
+      y: "50%",
+      scale: 1.5,
     });
 
     gsap.to(".txt_scal3", {
       scrollTrigger: {
         trigger: ".for",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1255,7 +926,6 @@ ScrollTrigger.matchMedia({
         start: "-100% 0%",
         end: "120% 100%",
         scrub: 1,
-        // markers: true,
       },
       y: "100%",
       scale: 2,
@@ -1264,7 +934,6 @@ ScrollTrigger.matchMedia({
     gsap.to(".txt_scal4", {
       scrollTrigger: {
         trigger: ".fiv",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1280,16 +949,14 @@ ScrollTrigger.matchMedia({
         start: "-150% 100%",
         end: "100% 50%",
         scrub: 1,
-        // markers: true,
       },
-      y: "50%", // 애니메이션의 시작 위치 조정
-      scale: 1.5, // 스케일 조정
+      y: "50%",
+      scale: 1.5,
     });
 
     gsap.to(".txt_scal4", {
       scrollTrigger: {
         trigger: ".fiv",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1309,7 +976,6 @@ ScrollTrigger.matchMedia({
         start: "-100% 0%",
         end: "120% 100%",
         scrub: 1,
-        // markers: true,
       },
       y: "100%",
       scale: 2,
@@ -1318,7 +984,6 @@ ScrollTrigger.matchMedia({
     gsap.to(".txt_scal5", {
       scrollTrigger: {
         trigger: ".six",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1334,16 +999,14 @@ ScrollTrigger.matchMedia({
         start: "-150% 100%",
         end: "100% 50%",
         scrub: 1,
-        // markers: true,
       },
-      y: "50%", // 애니메이션의 시작 위치 조정
-      scale: 1.5, // 스케일 조정
+      y: "50%",
+      scale: 1.5,
     });
 
     gsap.to(".txt_scal5", {
       scrollTrigger: {
         trigger: ".six",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1363,7 +1026,6 @@ ScrollTrigger.matchMedia({
         start: "-100% 0%",
         end: "120% 100%",
         scrub: 1,
-        // markers: true,
       },
       y: "100%",
       scale: 2,
@@ -1372,7 +1034,6 @@ ScrollTrigger.matchMedia({
     gsap.to(".txt_scal6", {
       scrollTrigger: {
         trigger: ".sev",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1388,16 +1049,14 @@ ScrollTrigger.matchMedia({
         start: "-150% 100%",
         end: "100% 50%",
         scrub: 1,
-        // markers: true,
       },
-      y: "50%", // 애니메이션의 시작 위치 조정
-      scale: 1.5, // 스케일 조정
+      y: "50%",
+      scale: 1.5,
     });
 
     gsap.to(".txt_scal6", {
       scrollTrigger: {
         trigger: ".sev",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1416,7 +1075,6 @@ ScrollTrigger.matchMedia({
         start: "-100% 0%",
         end: "120% 100%",
         scrub: 1,
-        // markers: true,
       },
       y: "100%",
       scale: 2,
@@ -1425,7 +1083,6 @@ ScrollTrigger.matchMedia({
     gsap.to(".txt_scal7", {
       scrollTrigger: {
         trigger: ".eig",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1441,16 +1098,14 @@ ScrollTrigger.matchMedia({
         start: "-150% 100%",
         end: "100% 50%",
         scrub: 1,
-        // markers: true,
       },
-      y: "50%", // 애니메이션의 시작 위치 조정
-      scale: 1.5, // 스케일 조정
+      y: "50%",
+      scale: 1.5,
     });
 
     gsap.to(".txt_scal7", {
       scrollTrigger: {
         trigger: ".eig",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1470,7 +1125,6 @@ ScrollTrigger.matchMedia({
         start: "-100% 0%",
         end: "120% 100%",
         scrub: 1,
-        // markers: true,
       },
       y: "100%",
       scale: 2,
@@ -1479,7 +1133,6 @@ ScrollTrigger.matchMedia({
     gsap.to(".txt_scal8", {
       scrollTrigger: {
         trigger: ".nine",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1495,16 +1148,14 @@ ScrollTrigger.matchMedia({
         start: "-150% 100%",
         end: "100% 50%",
         scrub: 1,
-        // markers: true,
       },
-      y: "50%", // 애니메이션의 시작 위치 조정
-      scale: 1.5, // 스케일 조정
+      y: "50%",
+      scale: 1.5,
     });
 
     gsap.to(".txt_scal8", {
       scrollTrigger: {
         trigger: ".nine",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1524,7 +1175,6 @@ ScrollTrigger.matchMedia({
         start: "-100% 0%",
         end: "120% 100%",
         scrub: 1,
-        // markers: true,
       },
       y: "100%",
       scale: 2,
@@ -1533,7 +1183,6 @@ ScrollTrigger.matchMedia({
     gsap.to(".txt_scal9", {
       scrollTrigger: {
         trigger: ".ten",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1549,16 +1198,14 @@ ScrollTrigger.matchMedia({
         start: "-150% 100%",
         end: "100% 50%",
         scrub: 1,
-        // markers: true,
       },
-      y: "50%", // 애니메이션의 시작 위치 조정
-      scale: 1.5, // 스케일 조정
+      y: "50%",
+      scale: 1.5,
     });
 
     gsap.to(".txt_scal9", {
       scrollTrigger: {
         trigger: ".ten",
-        // markers: true,
       },
       y: "0%",
       scale: 1,
@@ -1567,7 +1214,7 @@ ScrollTrigger.matchMedia({
 });
 
 // ------------------------------------------
-// 하단 리그
+// 하단 리그 a b 아래에서 위로 올라오는 이벤트 31개 반복
 // 반복할 박스의 총 개수
 const totalBoxes = 31; // .box_1부터 .box_30까지
 
@@ -1581,8 +1228,7 @@ for (let boxIndex = 1; boxIndex <= totalBoxes; boxIndex++) {
         trigger: `.awards_list_inner .box_${boxIndex}`, // 각 박스를 기준으로 범위 설정
         start: "0% 80%", // 시작 지점
         end: "100% 80%", // 끝 지점
-        // markers: true, // 개발가이드선
-        // scrub: 1,
+        // 개발가이드선
       },
     })
     .fromTo(
@@ -1635,6 +1281,7 @@ for (let boxIndex = 1; boxIndex <= totalBoxes; boxIndex++) {
     );
 }
 
+// 마지막섹션 : 2023 스크롤이벤트
 // num@
 ScrollTrigger.matchMedia({
   // 1000px 이상일 때
@@ -1645,8 +1292,6 @@ ScrollTrigger.matchMedia({
           trigger: ".num",
           start: "-200% 50%",
           end: "0% 80%",
-          // markers: true, // 개발 가이드 선
-          // scrub: 1, // 부드러운 스크러빙
         },
       })
       .fromTo(
@@ -1671,8 +1316,6 @@ ScrollTrigger.matchMedia({
           trigger: ".num",
           start: "-400% 100%",
           end: "100% 100%",
-          // markers: true, // 개발 가이드 선
-          // scrub: 1, // 부드러운 스크러빙
         },
       })
       .fromTo(
@@ -1682,7 +1325,7 @@ ScrollTrigger.matchMedia({
           duration: 1,
         },
         {
-          y: "-100%", // 또는 다른 적절한 값으로 조정
+          y: "-100%",
           duration: 1,
         },
         0.5
@@ -1699,8 +1342,6 @@ ScrollTrigger.matchMedia({
           trigger: ".num",
           start: "-200% 50%",
           end: "0% 80%",
-          // markers: true, // 개발 가이드 선
-          // scrub: 1, // 부드러운 스크러빙
         },
       })
       .fromTo(
@@ -1725,8 +1366,6 @@ ScrollTrigger.matchMedia({
           trigger: ".num",
           start: "-400% 100%",
           end: "100% 100%",
-          // markers: true, // 개발 가이드 선
-          // scrub: 1, // 부드러운 스크러빙
         },
       })
       .fromTo(
@@ -1736,7 +1375,7 @@ ScrollTrigger.matchMedia({
           duration: 1,
         },
         {
-          y: "-100%", // 또는 다른 적절한 값으로 조정
+          y: "-100%",
           duration: 1,
         },
         0.5
@@ -1754,8 +1393,6 @@ ScrollTrigger.matchMedia({
           trigger: ".num",
           start: "-200% 50%",
           end: "0% 80%",
-          // markers: true, // 개발 가이드 선
-          // scrub: 1, // 부드러운 스크러빙
         },
       })
       .fromTo(
@@ -1780,8 +1417,6 @@ ScrollTrigger.matchMedia({
           trigger: ".num",
           start: "-400% 100%",
           end: "100% 100%",
-          // markers: true, // 개발 가이드 선
-          // scrub: 1, // 부드러운 스크러빙
         },
       })
       .fromTo(
@@ -1791,7 +1426,7 @@ ScrollTrigger.matchMedia({
           duration: 1,
         },
         {
-          y: "-100%", // 또는 다른 적절한 값으로 조정
+          y: "-100%",
           duration: 1,
         },
         0.6
@@ -1808,8 +1443,6 @@ ScrollTrigger.matchMedia({
           trigger: ".num",
           start: "-200% 50%",
           end: "0% 80%",
-          // markers: true, // 개발 가이드 선
-          // scrub: 1, // 부드러운 스크러빙
         },
       })
       .fromTo(
@@ -1834,8 +1467,6 @@ ScrollTrigger.matchMedia({
           trigger: ".num",
           start: "-400% 100%",
           end: "100% 100%",
-          // markers: true, // 개발 가이드 선
-          // scrub: 1, // 부드러운 스크러빙
         },
       })
       .fromTo(
@@ -1845,7 +1476,7 @@ ScrollTrigger.matchMedia({
           duration: 1,
         },
         {
-          y: "-100%", // 또는 다른 적절한 값으로 조정
+          y: "-100%",
           duration: 1,
         },
         0.7
@@ -1862,8 +1493,6 @@ ScrollTrigger.matchMedia({
           trigger: ".num",
           start: "-200% 50%",
           end: "0% 80%",
-          // markers: true, // 개발 가이드 선
-          // scrub: 1, // 부드러운 스크러빙
         },
       })
       .fromTo(
@@ -1888,8 +1517,6 @@ ScrollTrigger.matchMedia({
           trigger: ".num",
           start: "-400% 100%",
           end: "100% 100%",
-          // markers: true, // 개발 가이드 선
-          // scrub: 1, // 부드러운 스크러빙
         },
       })
       .fromTo(
@@ -1899,7 +1526,7 @@ ScrollTrigger.matchMedia({
           duration: 1,
         },
         {
-          y: "-100%", // 또는 다른 적절한 값으로 조정
+          y: "-100%",
           duration: 1,
         },
         0.8
@@ -1916,8 +1543,6 @@ ScrollTrigger.matchMedia({
           trigger: ".num",
           start: "-200% 50%",
           end: "0% 80%",
-          // markers: true, // 개발 가이드 선
-          // scrub: 1, // 부드러운 스크러빙
         },
       })
       .fromTo(
@@ -1942,8 +1567,6 @@ ScrollTrigger.matchMedia({
           trigger: ".num",
           start: "-400% 100%",
           end: "100% 100%",
-          // markers: true, // 개발 가이드 선
-          // scrub: 1, // 부드러운 스크러빙
         },
       })
       .fromTo(
@@ -1953,7 +1576,7 @@ ScrollTrigger.matchMedia({
           duration: 1,
         },
         {
-          y: "-100%", // 또는 다른 적절한 값으로 조정
+          y: "-100%",
           duration: 1,
         },
         0.9
@@ -1969,7 +1592,7 @@ function createScrollAnimation(selector) {
         trigger: ".loop-text-holder",
         start: "-30% 0%",
         end: "10% 15%",
-        // markers: true, // 개발가이드선
+        // 개발가이드선
         scrub: 1,
       },
     })

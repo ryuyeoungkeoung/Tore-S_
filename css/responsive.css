@@ -20,9 +20,7 @@
     top: -60px;
   }
 }
-/* 지셉 900부터 만져야함 */
-@media screen and (max-width: 900px) {
-}
+
 @media screen and (max-width: 600px) {
   .main_poto {
     width: 83%;
@@ -57,7 +55,7 @@
     top: 25vw;
     right: -92vw;
   }
-  .div-block-12 {
+  .bottom_txt {
     bottom: 28vw;
   }
   .menu-text.sub {
@@ -207,7 +205,7 @@
     width: 71%;
     height: 47%;
   }
-  .div-block-12 {
+  .bottom_txt {
     bottom: 60vw;
   }
 }
