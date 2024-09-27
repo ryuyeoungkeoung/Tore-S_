@@ -250,8 +250,7 @@ body.no-scroll {
   animation-fill-mode: forwards;
   animation-timing-function: ease;
 }
-/* 로딩 갈색 화면 업 */
-
+/* 로딩 갈색 화면 업(로딩창) */
 @keyframes loading_up {
   0% {
     clip-path: polygon(
@@ -607,7 +606,7 @@ a {
   transform: rotateY(46deg);
   animation: name_line 0.9s ease 3.7s;
 }
-/* 빵꾸 텍스트 첫 애니메이션  옆으로 무한 돌아감 */
+/* 라인 텍스트 첫 애니메이션  옆으로 무한 돌아감 */
 @keyframes name_line {
   0% {
     transform: translateY(-100%);
@@ -622,7 +621,6 @@ a {
   display: flex;
   z-index: 11;
   font-size: 30vw;
-  /* letter-spacing: 82px; */
 }
 .loop-auto-size > div {
   animation: textRight1 20s linear 0s infinite;
@@ -638,7 +636,6 @@ a {
 }
 
 /* 2 */
-
 .loop-text-holder2 {
   font-family: "Playfair Display", serif;
   z-index: -1;
@@ -790,7 +787,7 @@ a {
   font-family: "Roboto", sans-serif;
 }
 
-/* 지셉 전체 묶어주는 div */
+/*  전체 묶어주는 div */
 .all_wrap {
   width: 100%;
   margin: 0 auto;
@@ -800,7 +797,7 @@ a {
 
   background-color: #fffbf7;
 }
-/* 섹션2  여기서부터 영역 복사 */
+/* 섹션2  */
 .two_sec {
   z-index: 25;
   border-bottom: 1px #353535;
@@ -810,9 +807,8 @@ a {
   margin-bottom: 7vw;
   display: inline-block;
   position: relative;
-  /* overflow: hidden; */
 }
-/*텍스트 */
+/* 섹션들 텍스트 */
 .txt_2 {
   position: relative;
   overflow: hidden;
@@ -975,7 +971,7 @@ a {
   position: relative;
   letter-spacing: -0.55vw;
 }
-/* 맨 위 빵꾸 텍스트 */
+/* 맨 위 라인 텍스트 */
 .main_2 h3:last-child {
   font-family: "Playfair Display", serif;
   z-index: 33;
@@ -1165,7 +1161,6 @@ img:hover {
 .box > h3:last-child {
   width: 50%;
   text-align: end;
-  /* background-color: blueviolet; */
   justify-content: end;
   font-size: 0.8vw;
   font-weight: 500;
@@ -1378,7 +1373,7 @@ span {
   font-family: "Playfair Display", serif;
 }
 
-/* 하단띠 */
+/* 하단띠 (년도라인) */
 .footer_fill {
   z-index: 999;
   height: 1vw;
