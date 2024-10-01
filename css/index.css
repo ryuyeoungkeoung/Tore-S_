@@ -1177,13 +1177,18 @@ img:hover {
   vertical-align: super;
   line-height: 10px;
 }
+/* 풋터 */
 footer {
+  width: auto;
+  height: auto;
+}
+.about_holder {
   display: flex;
   gap: 25vw;
   justify-content: space-between;
   width: fit-content;
   min-height: 50px;
-  padding-bottom: 15vw;
+  padding-bottom: 10vw;
   padding-left: 4vw;
   padding-right: 4vw;
   display: flex;
