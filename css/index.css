@@ -1177,11 +1177,7 @@ img:hover {
   vertical-align: super;
   line-height: 10px;
 }
-/* 풋터 */
-footer {
-  width: auto;
-  height: auto;
-}
+
 .about_holder {
   display: flex;
   gap: 25vw;
@@ -1363,6 +1359,11 @@ span {
   font-size: 1.3vw;
   letter-spacing: -1px;
   font-family: "Montagu Slab", serif;
+}
+/* 풋터 */
+footer {
+  width: auto;
+  height: auto;
 }
 /* 하단부 제일 큰 글자 */
 .num {
