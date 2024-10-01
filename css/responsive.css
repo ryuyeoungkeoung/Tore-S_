@@ -26,6 +26,9 @@
     width: 83%;
     height: 90%;
   }
+  .about_holder {
+    gap: 17vw;
+  }
 }
 
 /* 미디어쿼리 기본형 */

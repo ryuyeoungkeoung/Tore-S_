@@ -1179,7 +1179,6 @@ img:hover {
 }
 
 .about_holder {
-  display: flex;
   gap: 25vw;
   justify-content: space-between;
   width: fit-content;
@@ -1196,7 +1195,7 @@ img:hover {
 }
 .middle_txt {
   color: #221508;
-  width: 102%;
+  width: 100%;
   font-family: "Playfair Display", serif;
   font-size: 2vw;
   font-weight: 300;
