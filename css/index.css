@@ -219,7 +219,7 @@ body.no-scroll {
   position: relative;
   pointer-events: none;
   width: 100vw;
-  height: 107vh;
+  height: 100vh;
   background-color: rgb(34, 21, 8);
   position: fixed;
   top: -1%;

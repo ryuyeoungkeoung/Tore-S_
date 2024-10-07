@@ -30,6 +30,8 @@ for (let i = 1; i <= 31; i++) {
 
 //마우스 커서 따라다니기
 window.addEventListener("mousemove", function (event) {
+  // client에는 내가 움직이는 커서의 좌표값이 드렁있음
+
   cursorWrap.style.left = event.clientX + "px";
   cursorWrap.style.top = event.clientY + "px";
 });
@@ -122,12 +124,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (textElement) {
     const text = "Interactive Designer & Co-Founder at Baseborn";
-
     const html = text
       .split("")
       .map((char, index) => {
         if (char === "&") {
-          console.log(`Creating span for &: ${char}`); // Debugging
           return `<span class="and" style="--delay:${
             index * 0.02
           }s">${char}</span><br>`; // Insert <br> after '&'
@@ -139,10 +139,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // textElement적용
     textElement.innerHTML = html;
 
+    // 1.5초 후에 실행 안에 스판이 다 담겨ㅣㅆ다.
+    // 스판 포이치
     setTimeout(() => {
       const spans = textElement.querySelectorAll("span");
       spans.forEach((span) => {
-        console.log(`Adding animation class to: ${span.textContent}`); // Debugging
         span.classList.add("animate");
       });
     }, 1500); // 1초 후에 페이지 로딩
